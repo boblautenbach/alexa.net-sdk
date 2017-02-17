@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa.Demo.Web", "Amazon.Alexa.Demo.Web\Amazon.Alexa.Demo.Web.csproj", "{DD16BD2A-FCE6-4B6D-820D-2706F9927EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa", "Amazon.Alexa\Amazon.Alexa.csproj", "{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7065F8C-F44A-4F73-B99D-83BC5F512F5E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD16BD2A-FCE6-4B6D-820D-2706F9927EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD16BD2A-FCE6-4B6D-820D-2706F9927EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD16BD2A-FCE6-4B6D-820D-2706F9927EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD16BD2A-FCE6-4B6D-820D-2706F9927EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

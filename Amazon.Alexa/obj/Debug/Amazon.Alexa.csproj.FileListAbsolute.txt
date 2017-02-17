@@ -1,0 +1,7 @@
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\bin\Debug\Amazon.Alexa.dll
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\bin\Debug\Amazon.Alexa.pdb
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\obj\Debug\Amazon.Alexa.csprojResolveAssemblyReference.cache
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\obj\Debug\Amazon.Alexa.dll
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\obj\Debug\Amazon.Alexa.pdb
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Qnovations\Amazon.Alexa\Amazon.Alexa\bin\Debug\Newtonsoft.Json.xml
