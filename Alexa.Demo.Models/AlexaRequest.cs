@@ -44,6 +44,23 @@ namespace Alexa.Demo.Models
     //    public new AlfredAttributes Attributes { get; set; }
     //}
 
+
+    public class AlexaDemoRequest : Amazon.Alexa.Speechlet.AlexaRequest
+    {
+        public new AlexaDemoSession Session { get; set; }
+    }
+
+    public class AlexaDemoSession : Amazon.Alexa.Speechlet.Session
+    {
+        public new AlexaDemoAttributes Attributes { get; set; }
+    }
+
+    public class AlexaDemoAttributes : Amazon.Alexa.Speechlet.Attributes
+    {
+        public string ExpectedIntents { get; set; }
+        public string YesNoAction { get; set; }
+
+    }
     public class AlfredAttributes : Amazon.Alexa.Speechlet.Attributes
     {
         public string EventFor { get; set; }

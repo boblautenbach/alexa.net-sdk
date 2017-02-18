@@ -91,7 +91,6 @@ namespace Alexa.Demo.Web.Api.Controllers
         public async Task<AlexaDemoResponse> Main(AlexaDemoRequest alexaRequest)
         {
             AlexaDemoResponse response = new AlexaDemoResponse();
-            response.SessionAttributes = new AlexaDemoAttributes();
 
             try
             {

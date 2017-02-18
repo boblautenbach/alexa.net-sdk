@@ -5,17 +5,22 @@ using Newtonsoft.Json;
 namespace Alexa.Demo.Models
 {
 
+    //public class AlexaDemoResponse : Amazon.Alexa.Speechlet.AlexaResponse
+    //{
+    //    public new AlexaDemoSkillAttributes SessionAttributes { get; set; }
+    //}
+    //public class AlexaDemoSkillAttributes : Amazon.Alexa.Speechlet.Attributes
+    //{
+    //    public string Test { get; set; }
+
+    //}
+
+    [JsonObject("response")]
     public class AlexaDemoResponse : Amazon.Alexa.Speechlet.AlexaResponse
     {
-        public new AlexaDemoSkillAttributes SessionAttributes { get; set; }
+        [JsonProperty("sessionAttributes")]
+        public new AlexaDemoAttributes SessionAttributes { get; set; }
     }
-    public class AlexaDemoSkillAttributes : Amazon.Alexa.Speechlet.SkillAttributes
-    {
-        public string Test { get; set; }
-
-    }
-
-    
 
     //public class AlfredAlexaResponse
     //{

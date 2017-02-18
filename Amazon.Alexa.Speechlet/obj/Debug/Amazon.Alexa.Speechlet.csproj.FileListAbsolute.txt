@@ -24,3 +24,7 @@ C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Amazon.Alexa.Speechlet\obj\De
 C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\obj\Debug\Amazon.Alexa.Speechlet.csprojResolveAssemblyReference.cache
 C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\obj\Debug\Amazon.Alexa.Speechlet.dll
 C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\obj\Debug\Amazon.Alexa.Speechlet.pdb
+C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\bin\Debug\Amazon.Alexa.Speechlet.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\bin\Debug\Amazon.Alexa.Speechlet.pdb
+C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa.Speechlet\bin\Debug\Newtonsoft.Json.xml
