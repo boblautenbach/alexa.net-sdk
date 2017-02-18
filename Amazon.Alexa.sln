@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.Notification.Manager"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa.Speechlet", "Amazon.Alexa.Speechlet\Amazon.Alexa.Speechlet.csproj", "{0D0CB02E-FF21-4992-9AB9-B4456196A93C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatNow.Api", "Alfred.Api\WhatNow.Api.csproj", "{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.Demo.Web", "Alexa.Demo.Web\Alexa.Demo.Web.csproj", "{4BF5D384-8AD5-417F-B111-9BF30A520909}"
 EndProject
 Global
@@ -48,10 +46,6 @@ Global
 		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Release|Any CPU.ActiveCfg = Release|Any CPU
