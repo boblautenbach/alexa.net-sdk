@@ -1,0 +1,7 @@
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\bin\Release\Alexa.Notification.Manager.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\bin\Release\Alexa.Notification.Manager.pdb
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\bin\Release\Newtonsoft.Json.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\bin\Release\Newtonsoft.Json.xml
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Release\Alexa.Notification.Manager.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Release\Alexa.Notification.Manager.pdb
+C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Release\Alexa.Notification.Manager.csprojResolveAssemblyReference.cache

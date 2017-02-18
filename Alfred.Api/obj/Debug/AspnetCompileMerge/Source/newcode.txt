@@ -1,0 +1,22 @@
+﻿{  
+   "allitems":[  
+      {  
+         "items":
+            [
+                "pillow",
+                "pillows"
+            ],
+         "intents":
+            [
+                "intentname"
+            ],
+         "response":
+		 [
+		  en: "asdfasd"
+		  de: "sdfasdf"
+		  es: "sdfdasfadf"
+		 ]
+         "tag":"sdfa"
+      }       
+   ]
+}

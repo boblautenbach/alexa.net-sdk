@@ -12,6 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.Demo.Models", "..\..\..\..\..\Projects\alexa.net-sdk-master\Alexa.Demo.Models\Alexa.Demo.Models.csproj", "{0F8E0C46-29F4-4A94-A307-67D066EE66A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.Notification.Manager", "..\..\..\..\..\Projects\alexa.net-sdk-master\Alexa.Notification.Manager\Alexa.Notification.Manager.csproj", "{64EE0176-1BCC-4AB1-8071-20BECC940759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa.Speechlet", "..\..\..\..\..\Projects\alexa.net-sdk-master\Amazon.Alexa.Speechlet\Amazon.Alexa.Speechlet.csproj", "{0D0CB02E-FF21-4992-9AB9-B4456196A93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatNow.Api", "..\..\..\..\..\Projects\alexa.net-sdk-master\Alfred.Api\WhatNow.Api.csproj", "{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +34,22 @@ Global
 		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C15FBC-B72F-46C7-9E45-0438C856E7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8E0C46-29F4-4A94-A307-67D066EE66A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8E0C46-29F4-4A94-A307-67D066EE66A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8E0C46-29F4-4A94-A307-67D066EE66A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8E0C46-29F4-4A94-A307-67D066EE66A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EE0176-1BCC-4AB1-8071-20BECC940759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EE0176-1BCC-4AB1-8071-20BECC940759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EE0176-1BCC-4AB1-8071-20BECC940759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EE0176-1BCC-4AB1-8071-20BECC940759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0CB02E-FF21-4992-9AB9-B4456196A93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABCD86B-EC87-4D7F-B9D0-1EB78799B40C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

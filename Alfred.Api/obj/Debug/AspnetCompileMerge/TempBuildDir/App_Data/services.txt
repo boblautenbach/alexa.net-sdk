@@ -1,0 +1,7 @@
+﻿clean
+cleaned
+vacuum
+vacuumed
+trash
+trash bin
+garbage

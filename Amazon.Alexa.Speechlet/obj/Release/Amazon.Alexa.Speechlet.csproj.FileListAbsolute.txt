@@ -1,0 +1,7 @@
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\bin\Release\Amazon.Alexa.Speechlet.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\bin\Release\Amazon.Alexa.Speechlet.pdb
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\bin\Release\Newtonsoft.Json.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\bin\Release\Newtonsoft.Json.xml
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\obj\Release\Amazon.Alexa.Speechlet.csprojResolveAssemblyReference.cache
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\obj\Release\Amazon.Alexa.Speechlet.dll
+C:\Projects\Voceio\WhatNow\WhatNow\Amazon.Alexa.Speechlet\obj\Release\Amazon.Alexa.Speechlet.pdb
