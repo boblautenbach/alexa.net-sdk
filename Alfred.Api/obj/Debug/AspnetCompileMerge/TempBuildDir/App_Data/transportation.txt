@@ -1,4 +1,0 @@
-﻿taxi
-cab
-shuttle
-limo

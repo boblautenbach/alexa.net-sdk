@@ -1,8 +1,0 @@
-﻿hospital
-dentist
-clinic
-emergency room
-eye doctor
-doctor
-doctors
-doctors office

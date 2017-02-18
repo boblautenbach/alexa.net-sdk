@@ -5,3 +5,10 @@ C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\bin\Debug\Newtonso
 C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.csprojResolveAssemblyReference.cache
 C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.dll
 C:\Projects\Voceio\WhatNow\WhatNow\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.pdb
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\bin\Debug\Alexa.Notification.Manager.dll
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\bin\Debug\Alexa.Notification.Manager.pdb
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.csprojResolveAssemblyReference.cache
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.dll
+C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.pdb
