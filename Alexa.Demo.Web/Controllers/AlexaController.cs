@@ -128,6 +128,10 @@ namespace Alexa.Demo.Web.Api.Controllers
                         break;
                 }
 
+
+                //response.SessionAttributes.ExpectedIntents = "1";
+                //response.SessionAttributes.YesNoAction = "2";
+                //response.SessionAttributes.LastRequestIntent = "3";
                 //set value for repeat intent
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
             }
