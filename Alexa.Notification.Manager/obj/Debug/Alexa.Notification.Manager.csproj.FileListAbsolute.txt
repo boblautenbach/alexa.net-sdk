@@ -12,3 +12,10 @@ C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\bi
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.csprojResolveAssemblyReference.cache
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.dll
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.pdb
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\bin\Debug\Alexa.Notification.Manager.dll
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\bin\Debug\Alexa.Notification.Manager.pdb
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.csprojResolveAssemblyReference.cache
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.dll
+C:\Projects\alexnet-sdk\Alexa.Notification.Manager\obj\Debug\Alexa.Notification.Manager.pdb

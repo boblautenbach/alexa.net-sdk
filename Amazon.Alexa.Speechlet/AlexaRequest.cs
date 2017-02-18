@@ -80,20 +80,6 @@ namespace Amazon.Alexa.Speechlet
 
         public Reprompt Reprompt { get; set; }
 
-        public static implicit operator Attributes(global::Alexa.Demo.Models.AlexaDemoSkillAttributes v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static implicit operator Attributes(global::Alexa.Demo.Models.AlexaDemoSkillAttributes v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static implicit operator Attributes(global::Alexa.Demo.Models.AlexaDemoSkillAttributes v)
-        {
-            throw new NotImplementedException();
-        }
     }
     public class Session
     {

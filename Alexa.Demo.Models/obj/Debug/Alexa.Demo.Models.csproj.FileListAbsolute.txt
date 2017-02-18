@@ -1,1 +1,2 @@
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.csprojResolveAssemblyReference.cache
+C:\Projects\alexnet-sdk\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.csprojResolveAssemblyReference.cache

@@ -5,3 +5,10 @@ C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Amazon.Alexa\bin\Debug\Newton
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Amazon.Alexa\obj\Debug\Amazon.Alexa.csprojResolveAssemblyReference.cache
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Amazon.Alexa\obj\Debug\Amazon.Alexa.dll
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Amazon.Alexa\obj\Debug\Amazon.Alexa.pdb
+C:\Projects\alexnet-sdk\Amazon.Alexa\bin\Debug\Amazon.Alexa.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa\bin\Debug\Amazon.Alexa.pdb
+C:\Projects\alexnet-sdk\Amazon.Alexa\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\alexnet-sdk\Amazon.Alexa\obj\Debug\Amazon.Alexa.csprojResolveAssemblyReference.cache
+C:\Projects\alexnet-sdk\Amazon.Alexa\obj\Debug\Amazon.Alexa.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa\obj\Debug\Amazon.Alexa.pdb

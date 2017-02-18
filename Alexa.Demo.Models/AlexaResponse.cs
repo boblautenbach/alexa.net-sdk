@@ -7,10 +7,7 @@ namespace Alexa.Demo.Models
 
     public class AlexaDemoResponse : Amazon.Alexa.Speechlet.AlexaResponse
     {
-        public AlexaDemoResponse()
-        {
-            SessionAttributes = new AlexaDemoSkillAttributes();
-        }
+        public new AlexaDemoSkillAttributes SessionAttributes { get; set; }
     }
     public class AlexaDemoSkillAttributes : Amazon.Alexa.Speechlet.SkillAttributes
     {
