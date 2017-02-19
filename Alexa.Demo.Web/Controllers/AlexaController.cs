@@ -276,8 +276,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
             return response;
         }
-
-
+        
         private string ExpectedResponseValidation(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             string message = string.Empty;
@@ -315,7 +314,6 @@ namespace Alexa.Demo.Web.Api.Controllers
             return message;
             
         }
-
 
         private bool SlotIsEmptyOrNull(dynamic slot, string name)
         {
@@ -432,6 +430,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
             return response;
         }
+
         private async Task<AlexaDemoResponse> ProcessNoIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             string content = string.Empty;
@@ -469,8 +468,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             }
             return response;
         }
-
-
+    
         private async Task<AlexaDemoResponse> IntentRequest(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             bool shouldSetLastIntent = true;
