@@ -1,4 +1,5 @@
 ﻿using Amazon.Alexa.Models;
+using System;
 using System.Web.Http;
 
 namespace Amazon.Alexa.Demo.Web.Controllers
@@ -29,6 +30,14 @@ namespace Amazon.Alexa.Demo.Web.Controllers
             //interactionHandler2.IntentsList.Add("AMAZON.StopIntent", (req) => new { message = "This is the overriden built-in stop message." });
             //response = interactionHandler2.Process();
 
+            response =  BuidOutWithCard(IntentsHandler.Process(request, response)) as AlexaResponse;
+
+            
+            return response;
+        }
+
+        private AlexaResponse BuidOutWithCard(AlexaResponse response)
+        {
             return response;
         }
 

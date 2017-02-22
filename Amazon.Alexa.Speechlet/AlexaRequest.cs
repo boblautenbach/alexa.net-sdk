@@ -76,9 +76,16 @@ namespace Amazon.Alexa.Speechlet
     {
         public string LastRequestIntent { get; set; }
 
+        public string State { get; set; }
+
         public Outputspeech OutputSpeech { get; set; }
 
         public Reprompt Reprompt { get; set; }
+        public Attributes()
+        {
+            OutputSpeech = new Outputspeech();
+            Reprompt = new Reprompt();
+        }
 
     }
     public class Session
@@ -103,22 +110,6 @@ namespace Amazon.Alexa.Speechlet
     }
 
 
-    public abstract class SkillAttributes
-    {
-
-        public string LastRequestIntent { get; set; }
-
-        public Outputspeech OutputSpeech { get; set; }
-
-        public Reprompt Reprompt { get; set; }
-
-        public SkillAttributes()
-        {
-            LastRequestIntent = "";
-            OutputSpeech = new Outputspeech();
-            Reprompt = new Reprompt();
-        }
-    }
 
 
     public class User

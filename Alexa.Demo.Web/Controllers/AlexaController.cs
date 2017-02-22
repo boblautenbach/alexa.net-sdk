@@ -14,12 +14,15 @@ using System.Linq;
 using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
+using Alfred.Api.BaseClasses;
+using Alfred.Api.Handlers;
+using Alexa.Demo.Web.Handlers;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
     [UnhandledExceptionFilter]
     [RoutePrefix("api/alexa")]
-    public class AlexaController : ApiController
+    public class AlexaController : ApiController, IIntentHandler
     {
         #region :   Fields   :
         private const double TimeStampTolerance = 150;
@@ -47,6 +50,8 @@ namespace Alexa.Demo.Web.Api.Controllers
         string INVALID_RESPONSE_CONTENT = "This is embarassing, but for some reason we weren't able understand what you said.  Could you repeat that  again?";
         string INVALID_RESPONSE_REPROMT = "Give us another chance, please. Could you repeat that again?";
         bool isValid = false;
+
+        public string State { get; set; }
 
         public enum YesNoAction
         {
@@ -112,27 +117,17 @@ namespace Alexa.Demo.Web.Api.Controllers
                 }
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
-                switch (alexaRequest.Request.Type)
-                {
-                    case "LaunchRequest":
-                        response = LaunchRequest(alexaRequest, response);
-                        break;
-                    case "IntentRequest":
-                        response = await IntentRequest(alexaRequest, response);
-                        break;
-                    case "SessionEndedRequest":
-                        response = SessionEndedRequest(alexaRequest, response);
-                        break;
-                    case "Messaging.MessageReceived":
-                        response = await MessageReceivedRequest(alexaRequest, response);
-                        break;
-                }
+                var handler1 = new ListReminderHandler("ListReminder");
+                var handler2 = new CreateReminderHandler("CreateReminder");
+                this.State = "Main";
 
+                var sdk = new AlexaNetSDK();
+                sdk.RegisterHandlers(new List<IIntentHandler>() {this, handler1 , handler2});
 
-                //response.SessionAttributes.ExpectedIntents = "1";
-                //response.SessionAttributes.YesNoAction = "2";
-                //response.SessionAttributes.LastRequestIntent = "3";
-                //set value for repeat intent
+                alexaRequest =  SetRequestTypeState(alexaRequest);
+
+                response = sdk.HandleIntent(alexaRequest, response);
+
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
             }
             catch (Exception ex)
@@ -143,6 +138,46 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
+        private AlexaDemoRequest SetRequestTypeState(AlexaDemoRequest request)
+        {
+            switch (request.Request.Type)
+            {
+                case "LaunchRequest":
+                    request.Session.Attributes.State = "Main";
+                    break;
+                case "SessionEndedRequest":
+                    request.Session.Attributes.State = "Main";
+                    break;
+                case "Messaging.MessageReceived":
+                    request.Session.Attributes.State = "Main"; 
+                    break;
+                case "IntentRequest":
+                    switch (request.Request.Intent.Name)
+                    {
+                        case "ListReminders":
+                            request.Session.Attributes.State = "ListReminder";
+                            break;
+                        case "Amazon.HelpIntent":
+                            request.Session.Attributes.State = "Main";
+                            break;
+                        case "Amazon.CancelIntent":
+                            request.Session.Attributes.State = "Main";
+                            break;
+                        case "Amazon.StopIntent":
+                            request.Session.Attributes.State = "Main";
+                            break;
+                        case "Amazon.RepeatIntent":
+                            request.Session.Attributes.State = "Main";
+                            break;
+                        default:
+                            request.Session.Attributes.State = "CreateReminder";
+                            break;
+                    }
+                    break;
+            }
+
+            return request;
+        }
         private async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
         {
             try
@@ -204,21 +239,21 @@ namespace Alexa.Demo.Web.Api.Controllers
             return (!string.IsNullOrEmpty(request.Context.System.User.Permissions.ConsentToken));
         }
 
-        private AlexaDemoResponse ProcessUnknownIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse UnHandledIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             try
             {
-                return ProcessHelpIntent(request, response);
+                return HelpIntent(request, response);
 
             }
             catch (Exception ex)
             {
-                return ProcessHelpIntent(request, response);
+                return HelpIntent(request, response);
             }
 
         }
 
-        private AlexaDemoResponse ProcessHelpIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse HelpIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             response.Response.OutputSpeech.Text = _helpMessage;
             response.Response.Reprompt.OutputSpeech.Text = _helpMessagerePrompt;
@@ -236,18 +271,18 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        private AlexaDemoResponse ProcessCancelIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse CancelIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             response.Response.OutputSpeech.Text = "Thank you for using our Skill. Make it a great day!";
             response.Response.ShouldEndSession = true;
             return response;
         }
 
-        private AlexaDemoResponse ProcessRepeatIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse RepeatIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             if (string.IsNullOrEmpty(request.Session.Attributes.LastRequestIntent))
             {
-                return ProcessHelpIntent(request, response);
+                return HelpIntent(request, response);
             }
             else
             {
@@ -260,7 +295,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
         #region :   Alexa Type Handlers   :
 
-        private AlexaDemoResponse LaunchRequest(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse LaunchRequest(AlexaDemoRequest request, AlexaDemoResponse response)
         {
             response.Response.OutputSpeech.Text = _launchMessage;
             response.Response.Reprompt.OutputSpeech.Text = _launchMessagerePrompt;
@@ -356,7 +391,7 @@ namespace Alexa.Demo.Web.Api.Controllers
                 else
                 {
 
-                    return ProcessRepeatIntent(request, response);
+                    return RepeatIntent(request, response);
 
                 }
             }
@@ -458,7 +493,7 @@ namespace Alexa.Demo.Web.Api.Controllers
                 else
                 {
 
-                    return ProcessRepeatIntent(request, response);
+                    return RepeatIntent(request, response);
 
                 }
             }
@@ -489,23 +524,23 @@ namespace Alexa.Demo.Web.Api.Controllers
             switch (request.Request.Intent.Name)
             {
                 case "AMAZON.RepeatIntent":
-                    response = ProcessRepeatIntent(request, response);
+                    response = RepeatIntent(request, response);
                     shouldSetLastIntent = false;
                     break;
                 case "UnknownIntent":
-                    response = ProcessUnknownIntent(request, response);
+                    response = UnHandledIntent(request, response);
                     break;
                 case "SimpleTestIntent":
                     response = SimpleTestIntent(request, response);
                     break;
                 case "AMAZON.CancelIntent":
-                    response = ProcessCancelIntent(request, response);
+                    response = CancelIntent(request, response);
                     break;
                 case "AMAZON.StopIntent":
-                    response = ProcessCancelIntent(request, response);
+                    response = CancelIntent(request, response);
                     break;
                 case "AMAZON.HelpIntent":
-                    response = ProcessHelpIntent(request, response);
+                    response = HelpIntent(request, response);
                     break;
                 case "AMAZON.NoIntent":
                     response = await ProcessNoIntent(request, response);

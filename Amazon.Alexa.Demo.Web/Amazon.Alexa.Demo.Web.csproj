@@ -208,7 +208,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiAlexaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IntentsHandler.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\YesNoIntentHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
