@@ -129,6 +129,11 @@ namespace Alexa.Demo.Web.Api.Controllers
                 response = sdk.HandleIntent(alexaRequest, response);
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
+
+                //BuildOutTextOutPut();
+                //BuildOutTextOutPutWithCard()
+                //BuildOutTextOutPutWithCardImages();
+
             }
             catch (Exception ex)
             {
