@@ -48,6 +48,10 @@ namespace Alfred.Api.BaseClasses
 
         public void RegisterHandlers(List<IIntentHandler> handlers)
         {
+            //TODO
+            //check at least one handler provided
+            //check that each unique State values
+            //check anything else?
             _handlers = handlers;
         }
 
