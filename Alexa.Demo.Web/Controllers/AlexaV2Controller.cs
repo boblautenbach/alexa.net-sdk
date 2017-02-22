@@ -117,11 +117,15 @@ namespace Alexa.Demo.Web.Api.Controllers
                 }
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
+                //===============================================================================================
 
                 var sdk = new AlexaNetSDK();
                 sdk.RegisterHandlers(new List<IIntentHandler>() {this});
 
                 response = sdk.HandleIntent(alexaRequest, response);
+
+                //===============================================================================================
+
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
 
@@ -442,7 +446,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
                 }
                 //no on the recruing questions
-                else if (request.Session.Attributes.YesNoAction == YesNoAction.ShouldMakeAnnual.ToString())
+                else if (request.Session.Attributes.YesNoAction == Enum.GetName(typeof(YesNoAction),YesNoAction.ShouldMakeAnnual))
                 {
                 }
             

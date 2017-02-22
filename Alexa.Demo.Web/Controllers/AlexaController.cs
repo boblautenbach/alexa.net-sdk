@@ -117,6 +117,9 @@ namespace Alexa.Demo.Web.Api.Controllers
                 }
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
+
+                //===============================================================================================
+
                 var handler1 = new ListReminderHandler("ListReminder");
                 var handler2 = new CreateReminderHandler("CreateReminder");
                 this.State = "Main";
@@ -127,6 +130,9 @@ namespace Alexa.Demo.Web.Api.Controllers
                 alexaRequest =  SetRequestTypeState(alexaRequest);
 
                 response = sdk.HandleIntent(alexaRequest, response);
+
+                //===============================================================================================
+
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
 

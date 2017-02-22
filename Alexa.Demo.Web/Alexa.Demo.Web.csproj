@@ -153,6 +153,7 @@
     <Compile Include="Handlers\CreateReminderHandler.cs" />
     <Compile Include="Handlers\ListReminderHandler.cs" />
     <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
