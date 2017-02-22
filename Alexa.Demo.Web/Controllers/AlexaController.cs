@@ -172,7 +172,9 @@ namespace Alexa.Demo.Web.Api.Controllers
 
             return request;
         }
-        private async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
+
+
+        public async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
         {
             try
             {

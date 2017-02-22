@@ -125,6 +125,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
 
+                
                 //BuildOutTextOutPut();
                 //BuildOutTextOutPutWithCard()
                 //BuildOutTextOutPutWithCardImages();
@@ -138,7 +139,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        private async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
+        public async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
         {
             try
             {

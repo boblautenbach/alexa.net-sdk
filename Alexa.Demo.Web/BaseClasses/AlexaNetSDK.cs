@@ -12,6 +12,26 @@ namespace Alfred.Api.BaseClasses
     {
         private List<IIntentHandler> _handlers = new List<IIntentHandler>();
 
+        public dynamic BuildOutput()
+        {
+            throw new NotImplementedException();
+        }
+
+        public dynamic BuildOutputWithCard()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T BuildOutputWithCard<T>(T response)
+        {
+            throw new NotImplementedException();
+        }
+
+        public dynamic BuildOutputWithCardImages()
+        {
+            throw new NotImplementedException();
+        }
+
         public dynamic HandleIntent(dynamic request, dynamic response)
         {
             try

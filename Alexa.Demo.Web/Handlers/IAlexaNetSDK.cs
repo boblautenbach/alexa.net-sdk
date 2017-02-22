@@ -11,6 +11,14 @@ namespace Alfred.Api.Handlers
         dynamic HandleIntent(dynamic request, dynamic response);
 
         void RegisterHandlers(List<IIntentHandler> handlers);
-        
+
+        T BuildOutputWithCard<T>(T response);
+
+        dynamic BuildOutputWithCardImages();
+
+
+        dynamic BuildOutput();
+
+
     }
 }
