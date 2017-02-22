@@ -30,5 +30,10 @@ namespace Alfred.Api.Handlers
             response.Response.OutputSpeech.Text = "We Are in an Intent!";
             return response;
         }
+
+        public dynamic UnHandledIntent(dynamic request, dynamic response)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

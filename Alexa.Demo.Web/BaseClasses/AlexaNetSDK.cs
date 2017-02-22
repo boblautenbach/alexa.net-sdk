@@ -40,8 +40,11 @@ namespace Alfred.Api.BaseClasses
                 PropertyInfo prop = intentMgr.GetProperty("State", BindingFlags.Instance | BindingFlags.Public);
 
                 var propValue = (string)prop.GetValue(handler);
-    
-                if (propValue == (string)request.Session.Attributes.State)
+
+                propValue = (string.IsNullOrEmpty(propValue) ? "" : propValue);
+                string requestObjectState = (string.IsNullOrEmpty(request.Session.Attributes.State) ? "" : request.Session.Attributes.State);
+
+                if (propValue == requestObjectState)
                 {
                     var func =(string)(string.IsNullOrEmpty(request.Request.Intent.Name) ? request.Request.Type : request.Request.Intent.Name);
                     func = func.Replace("Amazon.", "").Replace("AMAZON.","");

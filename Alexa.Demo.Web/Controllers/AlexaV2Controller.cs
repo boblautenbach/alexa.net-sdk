@@ -21,8 +21,8 @@ using Alexa.Demo.Web.Handlers;
 namespace Alexa.Demo.Web.Api.Controllers
 {
     [UnhandledExceptionFilter]
-    [RoutePrefix("api/alexa")]
-    public class AlexaController : ApiController, IIntentHandler
+    [RoutePrefix("api/v2/alexa")]
+    public class AlexaV2Controller : ApiController, IIntentHandler
     {
         #region :   Fields   :
         private const double TimeStampTolerance = 150;
@@ -87,7 +87,7 @@ namespace Alexa.Demo.Web.Api.Controllers
         /// Add random prefix string to responses
         /// 
         /// </summary>
-        public AlexaController()
+        public AlexaV2Controller()
         {
         }
 
@@ -117,14 +117,9 @@ namespace Alexa.Demo.Web.Api.Controllers
                 }
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
-                var handler1 = new ListReminderHandler("ListReminder");
-                var handler2 = new CreateReminderHandler("CreateReminder");
-                this.State = "Main";
 
                 var sdk = new AlexaNetSDK();
-                sdk.RegisterHandlers(new List<IIntentHandler>() {this, handler1 , handler2});
-
-                alexaRequest =  SetRequestTypeState(alexaRequest);
+                sdk.RegisterHandlers(new List<IIntentHandler>() {this});
 
                 response = sdk.HandleIntent(alexaRequest, response);
 
@@ -143,35 +138,6 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        private AlexaDemoRequest SetRequestTypeState(AlexaDemoRequest request)
-        {
-
-            switch (request.Request.Type)
-            {
-                case "LaunchRequest":
-                    request.Session.Attributes.State = "Main"; ;
-                    break;
-                case "SessionEndedRequest":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "Messaging.MessageReceived":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "IntentRequest":
-                    switch (request.Request.Intent.Name)
-                    {
-                        case "ListReminders":
-                            request.Session.Attributes.State = "ListReminder";
-                            break;
-                        default:
-                            request.Session.Attributes.State = "CreateReminder";
-                            break;
-                    }
-                    break;
-            }
-
-            return request;
-        }
         private async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
         {
             try
@@ -558,7 +524,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        private AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
         {
 
             return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
