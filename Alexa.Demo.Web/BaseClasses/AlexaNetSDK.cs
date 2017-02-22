@@ -50,6 +50,7 @@ namespace Alfred.Api.BaseClasses
                     func = func.Replace("Amazon.", "").Replace("AMAZON.","");
 
                     var method = intentMgr.GetMethod(func);
+
                     if (method == null)
                     {
                         method = intentMgr.GetMethod("UnhandledIntent");
