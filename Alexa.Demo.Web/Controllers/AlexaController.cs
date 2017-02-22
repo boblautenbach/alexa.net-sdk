@@ -140,34 +140,17 @@ namespace Alexa.Demo.Web.Api.Controllers
 
         private AlexaDemoRequest SetRequestTypeState(AlexaDemoRequest request)
         {
+            //all intents/request types will be handled by
+            //the handler with State = Main
+            request.Session.Attributes.State = "Main";
+
             switch (request.Request.Type)
             {
-                case "LaunchRequest":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "SessionEndedRequest":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "Messaging.MessageReceived":
-                    request.Session.Attributes.State = "Main"; 
-                    break;
                 case "IntentRequest":
                     switch (request.Request.Intent.Name)
                     {
                         case "ListReminders":
                             request.Session.Attributes.State = "ListReminder";
-                            break;
-                        case "Amazon.HelpIntent":
-                            request.Session.Attributes.State = "Main";
-                            break;
-                        case "Amazon.CancelIntent":
-                            request.Session.Attributes.State = "Main";
-                            break;
-                        case "Amazon.StopIntent":
-                            request.Session.Attributes.State = "Main";
-                            break;
-                        case "Amazon.RepeatIntent":
-                            request.Session.Attributes.State = "Main";
                             break;
                         default:
                             request.Session.Attributes.State = "CreateReminder";
