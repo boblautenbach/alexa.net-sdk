@@ -88,10 +88,9 @@ namespace Amazon.Alexa.SDK
 
                 return intentResponse;
 
-            }catch(Exception ex)
+            }catch
             {
-                Console.WriteLine("");
-                return null;
+                throw new Exception("Oops");
             }
         }
 
