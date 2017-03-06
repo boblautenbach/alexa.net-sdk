@@ -77,6 +77,9 @@ namespace Amazon.Alexa.SDK
                     //your intent handler ("this").  In that instance, you would be creating an 
                     //instance of your API controller for all intent requests (even though the API object
                     //already exists
+                    //How do we allow for singletons?
+                    //How about constructors with params?
+                    //What if we store reference to object after first instantiation?
                     ConstructorInfo typeContructor = intentMgr.GetConstructor(Type.EmptyTypes);
                     typeInstance = typeContructor.Invoke(new object[] { });
                     intentResponse = method.Invoke(typeInstance, new object[] { request, response });
