@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.Alexa.SDK;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace Alexa.Demo.Web.Api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AlexaNet.RegisterHandlers();
         }
     }
 }

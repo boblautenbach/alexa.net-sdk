@@ -14,12 +14,14 @@ using System.Linq;
 using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
-using Alfred.Api.BaseClasses;
 using Alfred.Api.Handlers;
 using Alexa.Demo.Web.Handlers;
+using Amazon.Alexa.SDK;
+using Amazon.Alexa.SDK.Attributes;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
+    [AlexaNetSDK]
     [UnhandledExceptionFilter]
     [RoutePrefix("api/v2/alexa")]
     public class AlexaV2Controller : ApiController, IIntentHandler
@@ -119,17 +121,17 @@ namespace Alexa.Demo.Web.Api.Controllers
 
                 //===============================================================================================
 
-                var sdk = new AlexaNetSDK();
-                sdk.RegisterHandlers(new List<IIntentHandler>() {this});
+                //var sdk = new AlexaNetSDK();
+                //sdk.RegisterHandlers(new List<IIntentHandler>() {this});
 
-                response = sdk.HandleIntent(alexaRequest, response);
+                //response = sdk.HandleIntent(alexaRequest, response);
 
                 //===============================================================================================
+               
+                response = AlexaNet.HandleIntent(alexaRequest, response);
 
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
-
-                
                 //BuildOutTextOutPut();
                 //BuildOutTextOutPutWithCard()
                 //BuildOutTextOutPutWithCardImages();
@@ -495,9 +497,9 @@ namespace Alexa.Demo.Web.Api.Controllers
                 case "UnknownIntent":
                     response = UnHandledIntent(request, response);
                     break;
-                case "SimpleTestIntent":
-                    response = SimpleTestIntent(request, response);
-                    break;
+                //case "SimpleTestIntent":
+                //    response = SimpleTestIntent(request, response);
+                //    break;
                 case "AMAZON.CancelIntent":
                     response = CancelIntent(request, response);
                     break;
@@ -529,11 +531,11 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
-        {
+        //public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        //{
 
-            return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
-        }
+        //    return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
+        //}
 
         public dynamic UnHandledIntent(dynamic request, dynamic response)
         {

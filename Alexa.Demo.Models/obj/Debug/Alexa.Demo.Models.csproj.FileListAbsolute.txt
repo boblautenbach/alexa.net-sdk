@@ -1,10 +1,10 @@
 C:\Projects\Qnovations\Amazon\alexa.net-sdk-master\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.csprojResolveAssemblyReference.cache
-C:\Projects\alexnet-sdk\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.csprojResolveAssemblyReference.cache
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Alexa.Demo.Models.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Alexa.Demo.Models.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Amazon.Alexa.Speechlet.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Amazon.Alexa.Speechlet.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\alexnet-sdk\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.csprojResolveAssemblyReference.cache
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Models\obj\Debug\Alexa.Demo.Models.pdb

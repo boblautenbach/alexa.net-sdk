@@ -14,12 +14,14 @@ using System.Linq;
 using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
-using Alfred.Api.BaseClasses;
 using Alfred.Api.Handlers;
 using Alexa.Demo.Web.Handlers;
+using Amazon.Alexa.SDK.Attributes;
+using Amazon.Alexa.SDK;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
+    [AlexaNetSDK(Ignore = true)]
     [UnhandledExceptionFilter]
     [RoutePrefix("api/alexa")]
     public class AlexaController : ApiController, IIntentHandler
@@ -120,16 +122,18 @@ namespace Alexa.Demo.Web.Api.Controllers
 
                 //===============================================================================================
 
-                var handler1 = new ListReminderHandler("ListReminder");
-                var handler2 = new CreateReminderHandler("CreateReminder");
-                this.State = "Main";
+                //var handler1 = new ListReminderHandler("ListReminder");
+                //var handler2 = new CreateReminderHandler("CreateReminder");
+                //this.State = "Main";
 
-                var sdk = new AlexaNetSDK();
-                sdk.RegisterHandlers(new List<IIntentHandler>() {this, handler1 , handler2});
+                //var sdk = new AlexaNetSDK();
+                //sdk.RegisterHandlers(new List<IIntentHandler>() {this, handler1 , handler2});
 
-                alexaRequest =  SetRequestTypeState(alexaRequest);
+                //alexaRequest =  SetRequestTypeState(alexaRequest);
 
-                response = sdk.HandleIntent(alexaRequest, response);
+                //response = sdk.HandleIntent(alexaRequest, response);
+
+                response =  AlexaNet.HandleIntent(alexaRequest, response);
 
                 //===============================================================================================
 

@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa.Speechlet", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa.Demo.Web", "Alexa.Demo.Web\Alexa.Demo.Web.csproj", "{4BF5D384-8AD5-417F-B111-9BF30A520909}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Alexa.SDK", "Amazon.Alexa.SDK\Amazon.Alexa.SDK.csproj", "{26939404-D008-43FE-8553-8696848EB189}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF5D384-8AD5-417F-B111-9BF30A520909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26939404-D008-43FE-8553-8696848EB189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26939404-D008-43FE-8553-8696848EB189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26939404-D008-43FE-8553-8696848EB189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26939404-D008-43FE-8553-8696848EB189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -151,6 +151,7 @@
     <Compile Include="Handlers\LaunchHandler.cs" />
     <Compile Include="Handlers\CreateReminderHandler.cs" />
     <Compile Include="Handlers\ListReminderHandler.cs" />
+    <Compile Include="Handlers\TestIntentHandler.cs" />
     <Compile Include="Helpers\AppSettings.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +173,10 @@
     <ProjectReference Include="..\Alexa.Notification.Manager\Alexa.Notification.Manager.csproj">
       <Project>{64ee0176-1bcc-4ab1-8071-20becc940759}</Project>
       <Name>Alexa.Notification.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Amazon.Alexa.SDK\Amazon.Alexa.SDK.csproj">
+      <Project>{26939404-d008-43fe-8553-8696848eb189}</Project>
+      <Name>Amazon.Alexa.SDK</Name>
     </ProjectReference>
     <ProjectReference Include="..\Amazon.Alexa.Speechlet\Amazon.Alexa.Speechlet.csproj">
       <Project>{0d0cb02e-ff21-4992-9ab9-b4456196a93c}</Project>

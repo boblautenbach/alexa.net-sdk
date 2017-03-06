@@ -34,9 +34,6 @@ C:\Projects\alexa.net-sdk-master\Alexa.Demo.Web\bin\System.Web.Http.WebHost.xml
 C:\Projects\alexa.net-sdk-master\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.csprojResolveAssemblyReference.cache
 C:\Projects\alexa.net-sdk-master\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.dll
 C:\Projects\alexa.net-sdk-master\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.pdb
-C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.csprojResolveAssemblyReference.cache
-C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.dll
-C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Microsoft.Azure.Documents.ServiceInterop.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\DocumentDB.Spatial.Sql.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Demo.Web.dll.config
@@ -44,6 +41,7 @@ C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Demo.Web.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Demo.Web.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Demo.Models.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Notification.Manager.dll
+C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Amazon.Alexa.SDK.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Amazon.Alexa.Speechlet.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\EntityFramework.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\EntityFramework.SqlServer.dll
@@ -62,6 +60,7 @@ C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\System.Web.Http.WebHost.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\WebActivatorEx.dll
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Demo.Models.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Alexa.Notification.Manager.pdb
+C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Amazon.Alexa.SDK.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\Amazon.Alexa.Speechlet.pdb
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\EntityFramework.xml
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\EntityFramework.SqlServer.xml
@@ -72,3 +71,6 @@ C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\System.Net.Http.Formatting.xml
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\System.Web.Http.xml
 C:\Projects\alexnet-sdk\Alexa.Demo.Web\bin\System.Web.Http.WebHost.xml
+C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.csprojResolveAssemblyReference.cache
+C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.dll
+C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Alexa.Demo.Web.pdb
