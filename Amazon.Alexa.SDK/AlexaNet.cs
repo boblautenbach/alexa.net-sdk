@@ -117,7 +117,6 @@ namespace Amazon.Alexa.SDK
                 switch (_mode)
                 {
                     case Mode.AttributedClasses:
-                        //  handlers.FirstOrDefault(x => x.GetType().AssemblyQualifiedName == "")
                         //Handles static classes or methods as well as instance classes
                         if (intentMgr.IsAbstract || method.IsAbstract)
                         {
