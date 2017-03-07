@@ -16,8 +16,8 @@ namespace Amazon.Alexa.SDK
         private static Mode _mode;
         private enum Mode
         {
-            Attributed,
-            Func,
+            AttributedClasses,
+            CustomFunc,
             HandlerList
 
         }
@@ -33,7 +33,7 @@ namespace Amazon.Alexa.SDK
 
         public static void RegisterHandlers()
         {
-            _mode = Mode.Attributed;
+            _mode = Mode.AttributedClasses;
             if (!_handlerDict.Any())
             {
                 LoadSDKAttributedClasses();
@@ -101,7 +101,7 @@ namespace Amazon.Alexa.SDK
 
                 switch (_mode)
                 {
-                    case Mode.Attributed:
+                    case Mode.AttributedClasses:
                         //  handlers.FirstOrDefault(x => x.GetType().AssemblyQualifiedName == "")
                         //Handles static classes or methods as well as instance classes
                         if (intentMgr.IsAbstract || method.IsAbstract)
@@ -125,7 +125,7 @@ namespace Amazon.Alexa.SDK
                             intentResponse = method.Invoke(typeInstance, new object[] { request, response });
                         }
                         break;
-                    case Mode.Func:
+                    case Mode.CustomFunc:
                         break;
                     case Mode.HandlerList:
                         //this is for handling passing a list of objects (vs using attributed classes
