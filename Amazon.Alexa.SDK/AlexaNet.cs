@@ -17,11 +17,12 @@ namespace Amazon.Alexa.SDK
         private static readonly ConcurrentDictionary<string, string> _handlerDict = new ConcurrentDictionary<string, string>();
         private static ConcurrentBag<object> _handlerList = new ConcurrentBag<object>();
         private static Mode _mode;
+
+
         private enum Mode
         {
             AttributedClasses,
             HandlerList
-
         }
 
         private static readonly Lazy<AlexaNet> sdk =
@@ -66,12 +67,7 @@ namespace Amazon.Alexa.SDK
             foreach (var c in handlers)
             {
                 var intentMgr = c.GetType();
-                MethodInfo[] methodInfos = Type.GetType(intentMgr.AssemblyQualifiedName)
-                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
-                foreach (var m in methodInfos)
-                {
-                    _handlerDict.TryAdd(m.Name, intentMgr.AssemblyQualifiedName);
-                }
+                LoadInternalHandlerMethodMapper(intentMgr);
             }
         }
 
@@ -80,15 +76,22 @@ namespace Amazon.Alexa.SDK
             var classes = GetTypesWith<AlexaNetSDK>(true);
             foreach (var c in classes)
             {
-                MethodInfo[] methodInfos = Type.GetType(c.AssemblyQualifiedName)
-                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
-                foreach(var m in methodInfos)
-                {
-                    _handlerDict.TryAdd(m.Name, c.AssemblyQualifiedName);
-                }
+                LoadInternalHandlerMethodMapper(c);
             }
         }
 
+
+        private static void LoadInternalHandlerMethodMapper(Type c)
+        {
+            //TODO:  This should check if a method existing acrosss multiple classes (its been duplicated)
+            //We cannot have duplicated method names
+            MethodInfo[] methodInfos = Type.GetType(c.AssemblyQualifiedName)
+                       .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+            foreach (var m in methodInfos)
+            {
+                _handlerDict.TryAdd(m.Name, c.AssemblyQualifiedName);
+            }
+        }
         private static dynamic ProcessRequest(dynamic request, dynamic response)
         {
             object typeInstance = null;
@@ -106,6 +109,7 @@ namespace Amazon.Alexa.SDK
 
                 if (method == null)
                 {
+                    //TODO: More informed expection please
                     throw new Exception("Not found");
                 }
 
