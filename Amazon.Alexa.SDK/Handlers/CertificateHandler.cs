@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace Alexa.Demo.Web.Handlers
+namespace Amazon.Alexa.SDK.Handlers
 {
     public class CertificateValidationHandler : DelegatingHandler
     {//notes

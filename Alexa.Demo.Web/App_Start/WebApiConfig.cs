@@ -1,5 +1,4 @@
 ﻿
-using Alexa.Demo.Web.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +21,9 @@ namespace Alexa.Demo.Web.Api
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.MessageHandlers.Add(new CertificateValidationHandler());
+            //TODO
+            //document the the certificatin handler is in the SDK now
+            config.MessageHandlers.Add(new Amazon.Alexa.SDK.Handlers.CertificateValidationHandler());
         }
     }
 }

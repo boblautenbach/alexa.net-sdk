@@ -14,8 +14,6 @@ using System.Linq;
 using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
-using Alfred.Api.Handlers;
-using Alexa.Demo.Web.Handlers;
 using Amazon.Alexa.SDK.Attributes;
 using Amazon.Alexa.SDK;
 
@@ -24,7 +22,7 @@ namespace Alexa.Demo.Web.Api.Controllers
     [AlexaNetSDK(Ignore = true)]
     [UnhandledExceptionFilter]
     [RoutePrefix("api/alexa")]
-    public class AlexaController : ApiController, IIntentHandler
+    public class AlexaController : ApiController
     {
         #region :   Fields   :
         private const double TimeStampTolerance = 150;

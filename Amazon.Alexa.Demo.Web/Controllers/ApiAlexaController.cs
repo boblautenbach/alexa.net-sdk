@@ -15,12 +15,12 @@ namespace Amazon.Alexa.Demo.Web.Controllers
         // POST api/alexa
         public dynamic Post(AlexaRequest request)
         {
-            dynamic response;
+            dynamic response = null;
             
             //option 1 - uncomment the following to test option 1, comment out to test option 2
-            var interactionHandler1 = new Interactions(request);
-            interactionHandler1.Messages.StopMessage = "This is where you can override the default stop message.";
-            response = interactionHandler1.Process(this);
+            //var interactionHandler1 = new Interactions(request);
+            //interactionHandler1.Messages.StopMessage = "This is where you can override the default stop message.";
+            //response = interactionHandler1.Process(this);
 
             //option 2 - uncomment the following to test option 2, comment out to test option 1
             //var interactionHandler2 = new Interactions(request);

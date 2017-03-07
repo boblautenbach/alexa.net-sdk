@@ -1,24 +1,24 @@
-﻿using Alexa.Demo.Web.Handlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿//using Alexa.Demo.Web.Handlers;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
 
-namespace Alfred.Api.Handlers
-{
-    public interface IAlexaNetSDK
-    {
-        dynamic HandleIntent(dynamic request, dynamic response);
+//namespace Alfred.Api.Handlers
+//{
+//    public interface IAlexaNetSDK
+//    {
+//        dynamic HandleIntent(dynamic request, dynamic response);
 
-        void RegisterHandlers(List<IIntentHandler> handlers);
+//        void RegisterHandlers(List<IIntentHandler> handlers);
 
-        T BuildOutputWithCard<T>(T response);
+//        T BuildOutputWithCard<T>(T response);
 
-        dynamic BuildOutputWithCardImages();
-
-
-        dynamic BuildOutput();
+//        dynamic BuildOutputWithCardImages();
 
 
-    }
-}
+//        dynamic BuildOutput();
+
+
+//    }
+//}

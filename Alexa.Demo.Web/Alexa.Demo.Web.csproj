@@ -138,14 +138,13 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="BaseClasses\AlexaNetSDK.cs" />
+    <Compile Include="Handlers\AlexaNetSDK.cs" />
     <Compile Include="Controllers\AlexaV2Controller.cs" />
     <Compile Include="Controllers\AlexaController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\CertificateHandler.cs" />
     <Compile Include="Handlers\IAlexaNetSDK.cs" />
     <Compile Include="Handlers\IIntentHandler.cs" />
     <Compile Include="Handlers\LaunchHandler.cs" />

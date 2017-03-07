@@ -3,3 +3,8 @@ C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\Amazon.Alexa.SDK.pdb
 C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\obj\Debug\Amazon.Alexa.SDK.dll
 C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\obj\Debug\Amazon.Alexa.SDK.pdb
 C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\obj\Debug\Amazon.Alexa.SDK.csprojResolveAssemblyReference.cache
+C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\System.Web.Http.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\System.Net.Http.Formatting.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\System.Web.Http.xml
+C:\Projects\alexnet-sdk\Amazon.Alexa.SDK\bin\Debug\System.Net.Http.Formatting.xml

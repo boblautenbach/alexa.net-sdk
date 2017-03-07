@@ -15,7 +15,6 @@ namespace Amazon.Alexa.SDK
     //TOOD:
     // handle expections
     // document each method for clarification
-    // should be include cert handler?
 
     public sealed class AlexaNet: IAlexaNetSDK
     {
@@ -25,7 +24,6 @@ namespace Amazon.Alexa.SDK
         private enum Mode
         {
             AttributedClasses,
-            CustomFunc,
             HandlerList
 
         }
@@ -142,14 +140,12 @@ namespace Amazon.Alexa.SDK
                             intentResponse = method.Invoke(typeInstance, new object[] { request, response });
                         }
                         break;
-                    case Mode.CustomFunc:
-                        break;
                     case Mode.HandlerList:
                         //this is for handling passing a list of objects (vs using attributed classes
                         typeInstance = _handlerList.FirstOrDefault(x => x.GetType().AssemblyQualifiedName == target.Value);
                         intentResponse = method.Invoke(typeInstance, new object[] { request, response });
                         break;
-                    default:
+                    default: //TODO
                         break;
                 }
 
