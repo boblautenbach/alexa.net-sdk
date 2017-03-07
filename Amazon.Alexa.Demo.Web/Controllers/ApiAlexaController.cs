@@ -30,6 +30,9 @@ namespace Amazon.Alexa.Demo.Web.Controllers
             //interactionHandler2.IntentsList.Add("AMAZON.StopIntent", (req) => new { message = "This is the overriden built-in stop message." });
             //response = interactionHandler2.Process();
 
+            //This is created as Option #1 in the Alexa.Demo.Web Project it V2 AlexaController..instead
+            //of creating a intenthandler and calling them dirrectly as below, just pass a list of your
+            //intent handlerst to the SDK.
             response =  BuidOutWithCard(IntentsHandler.Process(request, response)) as AlexaResponse;
 
             

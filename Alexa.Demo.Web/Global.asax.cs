@@ -13,7 +13,9 @@ namespace Alexa.Demo.Web.Api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            AlexaNet.RegisterHandlers();
+
+            //use for attribute test
+           // AlexaNet.RegisterHandlers();
         }
     }
 }

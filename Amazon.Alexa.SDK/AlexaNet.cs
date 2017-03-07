@@ -1,7 +1,9 @@
 ﻿using Amazon.Alexa.SDK.Attributes;
+using Amazon.Alexa.SDK.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -9,6 +11,12 @@ using System.Threading.Tasks;
 
 namespace Amazon.Alexa.SDK
 {
+
+    //TOOD:
+    // handle expections
+    // document each method for clarification
+    // should be include cert handler?
+
     public sealed class AlexaNet: IAlexaNetSDK
     {
         private static readonly ConcurrentDictionary<string, string> _handlerDict = new ConcurrentDictionary<string, string>();
@@ -31,6 +39,10 @@ namespace Amazon.Alexa.SDK
         {
         }
 
+        /// <summary>
+        /// Registers your intent handlers.
+        /// </summary>
+        /// <returns>void</returns>
         public static void RegisterHandlers()
         {
             _mode = Mode.AttributedClasses;
@@ -40,6 +52,11 @@ namespace Amazon.Alexa.SDK
             }
         }
 
+        /// <summary>
+        /// Registers your intent handlers.
+        /// </summary>
+        /// <param name="handlers">List of instantiated objects, classes with static methods or singleton objects with public methods to handle intents </param>
+        /// <returns>void</returns>
         public static void RegisterHandlers(List<object> handlers)
         {
             _mode = Mode.HandlerList;

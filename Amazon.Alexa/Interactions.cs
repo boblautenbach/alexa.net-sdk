@@ -57,7 +57,7 @@ namespace Amazon.Alexa
         /// <typeparam name="T">The sender class type.</typeparam>
         /// <param name="sender">The sender class.</param>
         /// <returns>AlexaResponse object.</returns>
-        public dynamic Process<T>(T sender)
+        public dynamic r<T>(T sender)
         {
             var intentName = (_request.Request.Intent.Name).Replace("AMAZON.", string.Empty);
             var method = typeof(T).GetMethod(intentName);

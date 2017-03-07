@@ -18,6 +18,7 @@ using Alfred.Api.Handlers;
 using Alexa.Demo.Web.Handlers;
 using Amazon.Alexa.SDK;
 using Amazon.Alexa.SDK.Attributes;
+using Amazon.Alexa.SDK.Models;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
@@ -93,6 +94,11 @@ namespace Alexa.Demo.Web.Api.Controllers
         {
         }
 
+        public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        {
+
+            return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
+        }
         #region :   Main-End-Points   :
         [HttpPost, Route("main")]
         public async Task<AlexaDemoResponse> Main(AlexaDemoRequest alexaRequest)
@@ -120,15 +126,44 @@ namespace Alexa.Demo.Web.Api.Controllers
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
                 //===============================================================================================
-
-                //var sdk = new AlexaNetSDK();
-                //sdk.RegisterHandlers(new List<IIntentHandler>() {this});
-
-                //response = sdk.HandleIntent(alexaRequest, response);
+                //Option 1
+                AlexaNet.RegisterHandlers(new List<object>() { this });
+                response = AlexaNet.HandleIntent(alexaRequest, response);
 
                 //===============================================================================================
-               
-                response = AlexaNet.HandleIntent(alexaRequest, response);
+
+                //Option 2 --- ATTRIBUTED MODEL
+                //need to unremark code in global.cs to make this work
+                //response = AlexaNet.HandleIntent(alexaRequest, response);
+
+
+                //Option 3 ????????? DO WE NEED AN OPTION 3????
+
+                //=====>>>>This appears to be a variation on # 1 above<<==============================
+
+                //option 1 - uncomment the following to test option 1, comment out to test option 2
+                // var interactionHandler1 = new Interactions(request);
+                // interactionHandler1.Messages.StopMessage = "This is where you can override the default stop message.";
+                // response = interactionHandler1.Process(this);
+
+                //=====>>>>I am not sure where this fits now.<<==============================
+
+                //option 2 - uncomment the following to test option 2, comment out to test option 1
+                //var interactionHandler2 = new Interactions(request);
+                //interactionHandler2.IntentsList.Add("LaunchRequest", (req) => LaunchRequest(req));
+                //interactionHandler2.IntentsList.Add("WelcomeIntent", (req) => WelcomeIntent(req));
+                //interactionHandler2.IntentsList.Add("AMAZON.HelpIntent", (req) => HelpIntent());
+                //interactionHandler2.IntentsList.Add("AMAZON.StopIntent", (req) => new { message = "This is the overriden built-in stop message." });
+                //response = interactionHandler2.Process();
+
+                //=====>>>>This appears to be a variation on # 1 above<<==============================
+
+                //This is created as Option #1 in the Alexa.Demo.Web Project it V2 AlexaController..instead
+                //of creating a intenthandler and calling them dirrectly as below, just pass a list of your
+                //intent handlerst to the SDK.
+                // response = BuidOutWithCard(IntentsHandler.Process(request, response)) as AlexaResponse;
+
+
 
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
@@ -531,11 +566,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        //public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
-        //{
 
-        //    return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
-        //}
 
         public dynamic UnHandledIntent(dynamic request, dynamic response)
         {
