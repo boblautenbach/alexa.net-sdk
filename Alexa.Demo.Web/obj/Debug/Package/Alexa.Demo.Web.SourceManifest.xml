@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Package\PackageTmp" />
-  <setAcl path="C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\Projects\alexnet-sdk\Alexa.Demo.Web\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-</sitemanifest>
