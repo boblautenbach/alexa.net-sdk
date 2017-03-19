@@ -2,7 +2,6 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web.Http;
 using Alfred.Api.Filters;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
@@ -14,14 +13,13 @@ using System.Linq;
 using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
-using Amazon.Alexa.SDK.Attributes;
 using Amazon.Alexa.SDK;
+using System.Web.Http;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
-    [AlexaNetSDK(Ignore = true)]
     [UnhandledExceptionFilter]
-    [RoutePrefix("api/alexa")]
+    [RoutePrefix("api/v2/alexa")]
     public class AlexaController : ApiController
     {
         #region :   Fields   :
@@ -91,6 +89,11 @@ namespace Alexa.Demo.Web.Api.Controllers
         {
         }
 
+        public AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
+        {
+
+            return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
+        }
         #region :   Main-End-Points   :
         [HttpPost, Route("main")]
         public async Task<AlexaDemoResponse> Main(AlexaDemoRequest alexaRequest)
@@ -117,27 +120,14 @@ namespace Alexa.Demo.Web.Api.Controllers
                 }
                 response.SessionAttributes = alexaRequest.Session.Attributes;
 
+                //===============================================================================================
+                //Option 1
+                AlexaNet.RegisterHandlers(new List<object>() { this });
+                response = AlexaNet.HandleIntent(alexaRequest, response);
 
                 //===============================================================================================
-
-                //var handler1 = new ListReminderHandler("ListReminder");
-                //var handler2 = new CreateReminderHandler("CreateReminder");
-                //this.State = "Main";
-
-                //var sdk = new AlexaNetSDK();
-                //sdk.RegisterHandlers(new List<IIntentHandler>() {this, handler1 , handler2});
-
-                //alexaRequest =  SetRequestTypeState(alexaRequest);
-
-                //response = sdk.HandleIntent(alexaRequest, response);
-
-                response =  AlexaNet.HandleIntent(alexaRequest, response);
-
-                //===============================================================================================
-
 
                 response.SessionAttributes.OutputSpeech = response.Response.OutputSpeech;
-
                 //BuildOutTextOutPut();
                 //BuildOutTextOutPutWithCard()
                 //BuildOutTextOutPutWithCardImages();
@@ -150,37 +140,6 @@ namespace Alexa.Demo.Web.Api.Controllers
 
             return response;
         }
-
-        private AlexaDemoRequest SetRequestTypeState(AlexaDemoRequest request)
-        {
-
-            switch (request.Request.Type)
-            {
-                case "LaunchRequest":
-                    request.Session.Attributes.State = "Main"; ;
-                    break;
-                case "SessionEndedRequest":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "Messaging.MessageReceived":
-                    request.Session.Attributes.State = "Main";
-                    break;
-                case "IntentRequest":
-                    switch (request.Request.Intent.Name)
-                    {
-                        case "ListReminders":
-                            request.Session.Attributes.State = "ListReminder";
-                            break;
-                        default:
-                            request.Session.Attributes.State = "CreateReminder";
-                            break;
-                    }
-                    break;
-            }
-
-            return request;
-        }
-
 
         public async Task<AlexaDemoResponse> MessageReceivedRequest(AlexaDemoRequest alexaRequest, AlexaDemoResponse response)
         {
@@ -485,7 +444,7 @@ namespace Alexa.Demo.Web.Api.Controllers
 
                 }
                 //no on the recruing questions
-                else if (request.Session.Attributes.YesNoAction == YesNoAction.ShouldMakeAnnual.ToString())
+                else if (request.Session.Attributes.YesNoAction == Enum.GetName(typeof(YesNoAction),YesNoAction.ShouldMakeAnnual))
                 {
                 }
             
@@ -534,9 +493,9 @@ namespace Alexa.Demo.Web.Api.Controllers
                 case "UnknownIntent":
                     response = UnHandledIntent(request, response);
                     break;
-                case "SimpleTestIntent":
-                    response = SimpleTestIntent(request, response);
-                    break;
+                //case "SimpleTestIntent":
+                //    response = SimpleTestIntent(request, response);
+                //    break;
                 case "AMAZON.CancelIntent":
                     response = CancelIntent(request, response);
                     break;
@@ -568,11 +527,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             return response;
         }
 
-        private AlexaDemoResponse SimpleTestIntent(AlexaDemoRequest request, AlexaDemoResponse response)
-        {
 
-            return BuildResponseOutput(response, "Hello Alexa.Net SDK Team", "");
-        }
 
         public dynamic UnHandledIntent(dynamic request, dynamic response)
         {

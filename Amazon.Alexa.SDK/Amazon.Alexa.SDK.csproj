@@ -42,10 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlexaNet.cs" />
-    <Compile Include="Attributes\AlexaNetSDK.cs" />
     <Compile Include="Handlers\CertificateHandler.cs" />
     <Compile Include="Interfaces\IAlexaNetSDK.cs" />
-    <Compile Include="Models\IntentsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

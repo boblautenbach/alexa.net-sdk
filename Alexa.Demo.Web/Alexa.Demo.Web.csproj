@@ -139,7 +139,6 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Handlers\AlexaNetSDK.cs" />
-    <Compile Include="Controllers\AlexaV2Controller.cs" />
     <Compile Include="Controllers\AlexaController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
