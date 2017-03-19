@@ -5,16 +5,14 @@ using System.Threading.Tasks;
 using Alfred.Api.Filters;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
-using Alexa.Notification.Manager;
-using Alexa.Notification.Manager.Models;
-using Amazon.Alexa.Speechlet;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Globalization;
 using Alexa.Demo.Models;
 using Alexa.Demo.Web.Helpers;
 using Amazon.Alexa.SDK;
 using System.Web.Http;
+using Amazon.Alexa.SDK.Notification;
+using Amazon.Alexa.SDK.Models.Notification;
+using Amazon.Alexa.SDK.Models.AlexaSpeechlets;
 
 namespace Alexa.Demo.Web.Api.Controllers
 {
@@ -147,7 +145,7 @@ namespace Alexa.Demo.Web.Api.Controllers
             {
                 if (ValidatePermission(alexaRequest)){
 
-                    AlexaNotificationManager manager = new AlexaNotificationManager();
+                    NotificationManager manager = new NotificationManager();
 
                     var notif = new UserNotifcation();
                     notif.DisplayInfo = new Displayinfo();
@@ -180,13 +178,13 @@ namespace Alexa.Demo.Web.Api.Controllers
                     notif.DisplayInfo.Content = displayList.ToArray();
                     notif.SpokenInfo.Content = contentList.ToArray();
 
-                    var result = manager.SendToUser(alexaRequest.Context.System.User.Permissions.ConsentToken, notif);
+                    var result = manager.SendToDevices(alexaRequest.Context.System.User.Permissions.ConsentToken, notif);
 
                 }else
                 {
-                    response.Response.Card = new Amazon.Alexa.Speechlet.Card();
+                    response.Response.Card = new Card();
                     response.Response.Card.Type = "AskForPermissionsConsent";
-                    response.Response.Card.Permissions = Alexa.Notification.Manager.Models.Permissions.Permission;
+                    response.Response.Card.Permissions = Amazon.Alexa.SDK.Models.Notification.Permissions.Permission;
                 }
 
             }

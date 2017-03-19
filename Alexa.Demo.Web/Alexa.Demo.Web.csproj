@@ -168,17 +168,9 @@
       <Project>{0f8e0c46-29f4-4a94-a307-67d066ee66a2}</Project>
       <Name>Alexa.Demo.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Alexa.Notification.Manager\Alexa.Notification.Manager.csproj">
-      <Project>{64ee0176-1bcc-4ab1-8071-20becc940759}</Project>
-      <Name>Alexa.Notification.Manager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Amazon.Alexa.SDK\Amazon.Alexa.SDK.csproj">
       <Project>{26939404-d008-43fe-8553-8696848eb189}</Project>
       <Name>Amazon.Alexa.SDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Amazon.Alexa.Speechlet\Amazon.Alexa.Speechlet.csproj">
-      <Project>{0d0cb02e-ff21-4992-9ab9-b4456196a93c}</Project>
-      <Name>Amazon.Alexa.Speechlet</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

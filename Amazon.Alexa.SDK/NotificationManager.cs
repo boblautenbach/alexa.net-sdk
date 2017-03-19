@@ -3,15 +3,15 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Alexa.Notification.Manager.Models;
 using Newtonsoft.Json;
 using System.Net;
 using System.Collections.Generic;
 using System.Linq;
+using Amazon.Alexa.SDK.Models.Notification;
 
-namespace Alexa.Notification.Manager
+namespace Amazon.Alexa.SDK.Notification
 {
-    public class AlexaNotificationManager
+    public class NotificationManager
     {
         #region "Fields"
         const string TOKEN_BASE_URL = "https://api.amazon.com";
@@ -71,14 +71,14 @@ namespace Alexa.Notification.Manager
                         amazonRequestId = values.First();
                     }
 
-                   var result =  new Models.NotificationResponse() { ReasonPhrase = SendToSkillReasonCodeDecoder(response.StatusCode), StatusCode = response.StatusCode, XAmznRequestId = amazonRequestId, UserId = userId };
+                   var result =  new NotificationResponse() { ReasonPhrase = SendToSkillReasonCodeDecoder(response.StatusCode), StatusCode = response.StatusCode, XAmznRequestId = amazonRequestId, UserId = userId };
                    return result;
 
                 }
             }
             catch (Exception ex)
             {
-                return new Models.NotificationResponse() { ReasonPhrase = SendToSkillReasonCodeDecoder(HttpStatusCode.InternalServerError), StatusCode = HttpStatusCode.InternalServerError, XAmznRequestId = "", UserId = userId };
+                return new NotificationResponse() { ReasonPhrase = SendToSkillReasonCodeDecoder(HttpStatusCode.InternalServerError), StatusCode = HttpStatusCode.InternalServerError, XAmznRequestId = "", UserId = userId };
             }
         }
 
@@ -134,14 +134,14 @@ namespace Alexa.Notification.Manager
                                 NullValueHandling = NullValueHandling.Ignore
                             }), System.Text.Encoding.UTF8, "application/json"));
               
-                    var result = new Models.NotificationUserResponse() { ReasonPhrase = SendToUserReasonCodeDecoder(response.StatusCode), StatusCode = response.StatusCode };
+                    var result = new NotificationUserResponse() { ReasonPhrase = SendToUserReasonCodeDecoder(response.StatusCode), StatusCode = response.StatusCode };
                     return result;
 
                 }
             }
             catch (Exception ex)
             {
-                return new Models.NotificationUserResponse() { ReasonPhrase = SendToUserReasonCodeDecoder(HttpStatusCode.InternalServerError), StatusCode = HttpStatusCode.InternalServerError};
+                return new NotificationUserResponse() { ReasonPhrase = SendToUserReasonCodeDecoder(HttpStatusCode.InternalServerError), StatusCode = HttpStatusCode.InternalServerError};
             }
 
         }

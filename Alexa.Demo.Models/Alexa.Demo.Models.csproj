@@ -52,9 +52,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Amazon.Alexa.Speechlet\Amazon.Alexa.Speechlet.csproj">
-      <Project>{0d0cb02e-ff21-4992-9ab9-b4456196a93c}</Project>
-      <Name>Amazon.Alexa.Speechlet</Name>
+    <ProjectReference Include="..\Amazon.Alexa.SDK\Amazon.Alexa.SDK.csproj">
+      <Project>{26939404-d008-43fe-8553-8696848eb189}</Project>
+      <Name>Amazon.Alexa.SDK</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using Amazon.Alexa.Speechlet;
+﻿using Amazon.Alexa.SDK.Models.AlexaSpeechlets;
 using System;
 using System.Collections.Generic;
 using System.Linq;

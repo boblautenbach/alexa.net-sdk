@@ -16,7 +16,6 @@ namespace Amazon.Alexa.SDK
         private static readonly ConcurrentDictionary<string, string> _handlerDict = new ConcurrentDictionary<string, string>();
         private static ConcurrentBag<object> _handlerList = new ConcurrentBag<object>();
 
-
         private static readonly Lazy<AlexaNet> sdk =
             new Lazy<AlexaNet>(() => new AlexaNet());
 
@@ -33,10 +32,17 @@ namespace Amazon.Alexa.SDK
         /// <returns>void</returns>
         public static void RegisterHandlers(List<object> handlers)
         {
-            if (!_handlerDict.Any())
+            try
             {
-                _handlerList = new ConcurrentBag<object>(handlers);
-                LoadClasses(handlers);
+                if (!_handlerDict.Any())
+                {
+                    _handlerList = new ConcurrentBag<object>(handlers);
+                    LoadClasses(handlers);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("RegisterHandler Exception.", ex);
             }
         }
 
@@ -50,12 +56,16 @@ namespace Amazon.Alexa.SDK
         }
         private static void LoadInternalHandlerMethodMapper(Type c)
         {
-            //TODO:  This should check if a method existing acrosss multiple classes (its been duplicated)
-            //We cannot have duplicated method names
             MethodInfo[] methodInfos = Type.GetType(c.AssemblyQualifiedName)
                        .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
             foreach (var m in methodInfos)
             {
+                string valueCheck = string.Empty;
+               _handlerDict.TryGetValue(m.Name, out valueCheck);
+                if (string.IsNullOrEmpty(valueCheck))
+                {
+                    throw new Exception("Duplicate handler method found.  When using more than one handler object, request type and intent handler methods must not be duplicated accross objects.");
+                }
                 _handlerDict.TryAdd(m.Name, c.AssemblyQualifiedName);
             }
         }
@@ -63,43 +73,41 @@ namespace Amazon.Alexa.SDK
         {
             object typeInstance = null;
             dynamic intentResponse = null;
-            try
+
+            var func = (string)(string.IsNullOrEmpty(request.Request.Intent.Name) ? request.Request.Type : request.Request.Intent.Name);
+            func = func.Replace("Amazon.", "").Replace("AMAZON.", "");
+
+            var target = _handlerDict.FirstOrDefault(x => x.Key == func);
+
+            var intentMgr = Type.GetType(target.Value);
+
+            var method = intentMgr.GetMethod(func);
+
+            if (method == null)
             {
-                var func = (string)(string.IsNullOrEmpty(request.Request.Intent.Name) ? request.Request.Type : request.Request.Intent.Name);
-                func = func.Replace("Amazon.", "").Replace("AMAZON.", "");
-
-                var target = _handlerDict.FirstOrDefault(x => x.Key == func);
-
-                var intentMgr = Type.GetType(target.Value);
-
-                var method = intentMgr.GetMethod(func);
-
-                if (method == null)
-                {
-                    //TODO: More informed expection please
-                    throw new Exception("Not found");
-                }
-
-                //this is for handling passing a list of objects (vs using attributed classes
-                typeInstance = _handlerList.FirstOrDefault(x => x.GetType().AssemblyQualifiedName == target.Value);
-                intentResponse = method.Invoke(typeInstance, new object[] { request, response });
-
-
-                //set type to null to prompt garbage collection
-                //perhaps require intent handlers to implemention IDisposable??
-                typeInstance = null;
-
-                return intentResponse;
-
-            }catch
-            {
-                throw new Exception("Oops");
+                throw new Exception("Intent method handler not found.");
             }
+
+            //this is for handling passing a list of objects (vs using attributed classes
+            typeInstance = _handlerList.FirstOrDefault(x => x.GetType().AssemblyQualifiedName == target.Value);
+            intentResponse = method.Invoke(typeInstance, new object[] { request, response });
+
+            //set type to null to prompt garbage collection
+            //perhaps require intent handlers to implemention IDisposable??
+            typeInstance = null;
+
+            return intentResponse;
         }
 
         public static dynamic HandleIntent(dynamic request, dynamic response)
         {
-            return ProcessRequest(request, response);
+            try
+            { 
+                 return ProcessRequest(request, response);
+            }catch(Exception ex)
+            {
+                throw new Exception("Error processing request", ex);
+            }
         }
 
         public T BuildOutputWithCard<T>(T response)
